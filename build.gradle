@@ -10,6 +10,7 @@ buildscript {
 	}
 }
 
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'spring-boot'
@@ -25,6 +26,15 @@ targetCompatibility = 1.8
 repositories {
 	mavenCentral()
 }
+
+sourceSets {
+	test {
+		java {
+			srcDirs = ["test/java"]  // Note @Peter's comment below
+		}
+	}
+}
+
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
